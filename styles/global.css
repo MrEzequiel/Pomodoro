@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+input {
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+:root {
+  /* COR */
+  --primary-color: #333853;
+  --secondary-color: #a3a6b5;
+  --third-color: #3c4262;
+  --color-work: #219653;
+  --pause-work: #f2c94c;
+
+  font-size: 63.5%;
+}
+
+body {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font: 400 1.6rem 'Inter', sans-serif;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,101 @@
+header {
+  font-size: 2.5rem;
+  min-height: 20vh;
+  padding: 0 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  font-weight: bold;
+  background: var(--third-color);
+
+  border: 0.1rem solid var(--primary-color);
+  box-shadow: 0 0.5rem 0.7rem 0.2rem #00000040;
+  padding: 2rem 5rem;
+  border-radius: 1rem;
+}
+
+main {
+  height: 70vh;
+}
+
+main .work {
+  margin-right: 5rem;
+  background: var(--third-color);
+
+  width: 25rem;
+  height: 25rem;
+
+  border-radius: 50%;
+
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+.work .timer-work {
+  border: 0.5rem solid var(--color-work);
+  border-radius: 50%;
+
+  width: 90%;
+  height: 90%;
+}
+
+.work .timer-work.pause {
+  border-color: var(--pause-work);
+}
+
+.work-details h2 {
+  color: var(--color-work);
+  font-size: 3rem;
+}
+
+.work-details.pause h2 {
+  color: var(--pause-work);
+}
+
+.work-details .sections {
+  margin: 3rem 0;
+}
+
+.sections .session-time {
+  width: 1rem;
+  height: 1rem;
+
+  border-radius: 50%;
+
+  margin-right: 1rem;
+  background: var(--color-work);
+}
+.sections.pause .session-time {
+  background: var(--pause-work);
+}
+
+.sections .session-time.disabled {
+  background: var(--third-color);
+}
+
+.sections .session-time:last-child {
+  margin-right: 0rem;
+}
+
+.work-details .start-pause span {
+  user-select: none;
+  cursor: pointer;
+
+  background: var(--third-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--primary-color);
+  box-shadow: 0 0.5rem 0.7rem 0.2rem #00000040;
+}
+
+.alert {
+  display: none;
+}
+
+footer {
+  text-align: center;
+}

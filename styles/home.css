@@ -1,0 +1,56 @@
+header {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 10% 0;
+}
+
+.pomodoro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pomodoro input {
+  background: #3c4262;
+  color: var(--secondary-color);
+  width: 9rem;
+  height: 8.5rem;
+  text-align: center;
+
+  padding: 1rem;
+  font-size: 5rem;
+  border-radius: 0.75rem;
+
+  transition: border 250ms;
+}
+
+.pomodoro.alert input {
+  border: 0.3rem solid rgb(255, 52, 52);
+}
+
+.pomodoro div {
+  margin-left: 5rem;
+}
+.pomodoro div p {
+  margin-top: 2.5rem;
+}
+
+.pomodoro div:nth-last-child(3) {
+  margin: 0;
+}
+
+.button {
+  margin: 4rem auto 0 auto;
+  display: block;
+  cursor: pointer;
+  background: #3c4262;
+  border: 0;
+  outline: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  border-radius: 1rem;
+
+  padding: 2rem;
+}
