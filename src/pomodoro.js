@@ -6,9 +6,31 @@ let section = localStorage.getItem('sections')
 const bellSound = document.getElementById('bell')
 const completionSound = document.getElementById('complete')
 
-window.onload = () => {
-  Section.isertDiv()
-  updateNumber(work, '00')
+let isAllowed = false
+
+//NOTIFICAÇÃO
+const Notifyer = {
+  async init() {
+    const permission = await Notification.requestPermission()
+    isAllowed = permission == 'granted' ? true : false
+  },
+  notify(type) {
+    if (type != 'acabou') {
+      new Notification(`${type.toUpperCase()} ACABOU!`, {
+        body: `Volte para iniciar ${
+          type == 'pausa' ? 'o trabalho!' : 'a pausa!'
+        }`,
+        icon: './assets/tomato-vegetable.png'
+      })
+    } else {
+      new Notification('PARABÉNS', {
+        body: `Você completou o pomodoro com ${
+          work * section
+        } minutos de trabalho!`,
+        icon: './assets/tomato-vegetable.png'
+      })
+    }
+  }
 }
 
 //SETAR DIV'S COM O TOTAL DE SESSÕES
@@ -35,17 +57,34 @@ const updateNumber = (minutes, seconds) => {
 }
 
 const toggleWorkPause = () => {
-  document.querySelector('.timer-work').classList.toggle('pause')
-  document.querySelector('.work-details').classList.toggle('pause')
-  document.querySelector('.sections').classList.toggle('pause')
-
-  //
-  if (document.querySelector('.timer-work.pause') != null) {
+  if (document.querySelector('.timer-work.pause') != null || section == 1) {
     disableSections()
-    updateNumber(pause, '00')
+  }
+
+  if (section > 0) {
+    bellSound.play()
+    document.querySelector('.timer-work').classList.toggle('pause')
+    document.querySelector('.work-details').classList.toggle('pause')
+    document.querySelector('.sections').classList.toggle('pause')
+    if (document.querySelector('.timer-work.pause') != null) {
+      if (isAllowed) {
+        Notifyer.notify('trabalho')
+      }
+      updateNumber(pause, '00')
+    } else {
+      work = localStorage.getItem('work')
+      if (isAllowed) {
+        Notifyer.notify('pausa')
+      }
+      updateNumber(work, '00')
+    }
   } else {
-    work = localStorage.getItem('work')
-    updateNumber(work, '00')
+    completionSound.play()
+    if (isAllowed) {
+      Notifyer.notify('acabou')
+    }
+    document.querySelector('.work').classList.add('animation')
+    document.querySelector('.work-details').classList.add('animation')
   }
 }
 
@@ -108,3 +147,9 @@ document.querySelector('.play-pomodoro').addEventListener('click', event => {
     }
   }
 })
+
+window.onload = async () => {
+  Section.isertDiv()
+  updateNumber(work, '00')
+  await Notifyer.init()
+}

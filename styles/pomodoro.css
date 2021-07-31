@@ -1,3 +1,15 @@
+@keyframes transparency {
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 header {
   font-size: 2.5rem;
   min-height: 20vh;
@@ -8,13 +20,22 @@ header {
   justify-content: space-between;
 }
 
+header img {
+  width: min(40rem, 80%);
+}
+
 header a {
   font-weight: bold;
-  padding: 2rem 5rem;
+  width: min(20rem, 50%);
+  height: 6rem;
 }
 
 main {
   height: 70vh;
+}
+
+.animation {
+  animation: transparency 1s infinite;
 }
 
 main .work {
@@ -28,6 +49,8 @@ main .work {
 
   font-size: 4.5rem;
   font-weight: bold;
+
+  transition: opacity 200ms;
 }
 
 .work .timer-work {
@@ -87,4 +110,24 @@ main .work {
 
 footer {
   text-align: center;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  header img {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+  }
+  main .work {
+    margin: 0 0 5rem;
+  }
 }

@@ -56,11 +56,13 @@ main {
 .pomodoro .span-alert {
   display: none;
   position: absolute;
+  z-index: 5;
   top: -10rem;
 
   background: var(--third-color);
 
   border-radius: 3rem;
+  border: 0.2rem solid var(--secondary-color);
   padding: 2rem 1rem;
 }
 
@@ -72,6 +74,7 @@ main {
   left: 37px;
 
   border-radius: 0 0 0 20px;
+  /* border: 0.2rem solid var(--secondary-color); */
 
   background: var(--third-color);
   width: 2rem;
