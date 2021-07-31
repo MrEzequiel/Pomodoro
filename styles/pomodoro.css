@@ -10,12 +10,7 @@ header {
 
 header a {
   font-weight: bold;
-  background: var(--third-color);
-
-  border: 0.1rem solid var(--primary-color);
-  box-shadow: 0 0.5rem 0.7rem 0.2rem #00000040;
   padding: 2rem 5rem;
-  border-radius: 1rem;
 }
 
 main {
@@ -83,13 +78,7 @@ main .work {
 
 .work-details .start-pause span {
   user-select: none;
-  cursor: pointer;
-
-  background: var(--third-color);
   padding: 1.5rem;
-  border-radius: 1rem;
-  border: 0.1rem solid var(--primary-color);
-  box-shadow: 0 0.5rem 0.7rem 0.2rem #00000040;
 }
 
 .alert {

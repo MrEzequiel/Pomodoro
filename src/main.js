@@ -13,7 +13,7 @@ const Verification = {
       inputSections === '' ||
       inputSections <= '0'
     ) {
-      this.alert()
+      this.alert([inputWork, inputPause, inputSections])
     } else {
       saveInputs(
         parseInt(inputWork),
@@ -23,8 +23,17 @@ const Verification = {
     }
   },
   //ALERTA O USUÁRIO OS CAMPOS
-  alert() {
-    document.querySelector('.pomodoro').classList.add('alert')
+  alert(target) {
+    for (i = 0; i < target.length; i++) {
+      if (target[i] === '' || target[i] <= '0') {
+        const spanAlert = document.querySelector(`.span-alert.input${i + 1}`)
+        spanAlert.style.display = 'block'
+      }
+    }
+  },
+
+  closeAlert(target) {
+    target.style.display = 'none'
   }
 }
 
@@ -42,6 +51,11 @@ function saveInputs(work, pause, sections) {
 // DEPOIS REDIRECIONAR PARA PÁGINA DO POMODORO
 const redirectPage = () => (window.location.href = 'pomodoro.html')
 
+document.querySelectorAll('.input-home').forEach(input => {
+  input.addEventListener('focusin', event => {
+    Verification.closeAlert(event.target.parentElement.firstElementChild)
+  })
+})
 // QUANDO O BOTÃO FOR CLICADO
 document.querySelector('.button-home').addEventListener('click', () => {
   Verification.input()

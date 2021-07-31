@@ -1,18 +1,24 @@
 header {
-  text-align: center;
-  font-size: 2.5rem;
-  padding: 10% 0;
+  height: 25vh;
+}
+
+header img {
+  width: min(50rem, 90%);
+}
+
+main {
+  height: 75vh;
+  flex-direction: column;
 }
 
 .pomodoro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: -5rem;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .pomodoro input {
-  background: #3c4262;
+  background: var(--third-color);
   color: var(--secondary-color);
   width: 9rem;
   height: 8.5rem;
@@ -21,17 +27,39 @@ header {
   padding: 1rem;
   font-size: 5rem;
   border-radius: 0.75rem;
-
-  transition: border 250ms;
 }
 
-.pomodoro.alert input {
-  border: 0.3rem solid rgb(255, 52, 52);
+.pomodoro .span-alert {
+  display: none;
+  position: absolute;
+  top: -10rem;
+
+  background: var(--third-color);
+
+  border-radius: 3rem;
+  padding: 2rem 1rem;
+}
+
+.pomodoro .span-alert:after {
+  content: '';
+
+  position: absolute;
+  bottom: -1.25rem;
+  left: 37px;
+
+  border-radius: 0 0 0 20px;
+
+  background: var(--third-color);
+  width: 2rem;
+  height: 2rem;
 }
 
 .pomodoro div {
+  position: relative;
+
   margin-left: 5rem;
 }
+
 .pomodoro div p {
   margin-top: 2.5rem;
 }
@@ -41,16 +69,18 @@ header {
 }
 
 .button {
-  margin: 4rem auto 0 auto;
-  display: block;
-  cursor: pointer;
-  background: #3c4262;
-  border: 0;
-  outline: 0;
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--secondary-color);
-  border-radius: 1rem;
 
+  margin: 5rem auto 0 auto;
   padding: 2rem;
+}
+
+@media (max-width: 500px) {
+  main .pomodoro {
+    display: block;
+  }
+  .pomodoro.flex div {
+    margin: 0 0 2rem 0;
+  }
 }
