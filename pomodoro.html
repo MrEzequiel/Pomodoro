@@ -20,11 +20,11 @@
   </head>
   <body>
     <header>
-      <h1>Pomodoro</h1>
+      <img src="./assets/logo.svg" alt="logo" />
       <a href="index.html" class="button">Início</a>
     </header>
     <main class="flex">
-      <div class="work flex">
+      <div class="work flex shadow">
         <div class="timer-work flex">--</div>
       </div>
       <div class="work-details">
@@ -36,8 +36,10 @@
           <span class="material-icons play-pomodoro button">play_arrow</span>
         </div>
       </div>
+      <audio src="./assets/audios/Bell.mp3" id="bell"></audio>
+      <audio src="./assets/audios/Complete.mp3" id="complete"></audio>
     </main>
-    <footer>Feito com amor por Ezequiel</footer>
+    <footer>Feito com 💜 por Ezequiel</footer>
     <script src="./src/pomodoro.js"></script>
   </body>
 </html>

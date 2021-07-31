@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/home.css" />
     <link rel="stylesheet" href="./styles/global.css" />
     <title>Pomodoro</title>
@@ -22,24 +26,64 @@
       <section class="pomodoro flex">
         <div class="work-time">
           <span class="span-alert input1">Campo inválido!</span>
-          <input id="work" type="number" value="30" class="shadow input-home" />
-          <p>Trabalho <small>(min)</small></p>
+          <div class="input-group">
+            <div class="buttons">
+              <button type="button" class="button shadow button-up">
+                <span class="material-icons"> north </span>
+              </button>
+              <button type="button" class="button shadow button-down">
+                <span class="material-icons"> south </span>
+              </button>
+            </div>
+            <input
+              id="work"
+              type="number"
+              value="30"
+              class="shadow input-home"
+            />
+          </div>
+          <p class="text">Trabalho <small>(min)</small></p>
         </div>
         <div class="pause-time">
           <span class="span-alert input2">Campo inválido!</span>
-          <input id="pause" type="number" value="5" class="shadow input-home" />
-          <p>Pausa <small>(min)</small></p>
+          <div class="input-group">
+            <div class="buttons">
+              <button type="button" class="button shadow button-up">
+                <span class="material-icons"> north </span>
+              </button>
+              <button type="button" class="button shadow button-down">
+                <span class="material-icons"> south </span>
+              </button>
+            </div>
+            <input
+              id="pause"
+              type="number"
+              value="5"
+              class="shadow input-home"
+            />
+          </div>
+          <p class="text">Pausa <small>(min)</small></p>
         </div>
         <div class="sections-time">
           <span class="span-alert input3">Campo inválido!</span>
-          <input
-            id="sections"
-            type="number"
-            max="60"
-            value="3"
-            class="shadow input-home"
-          />
-          <p>Sessões</p>
+          <div class="input-group">
+            <div class="buttons">
+              <button type="button" class="button shadow button-up">
+                <span class="material-icons"> north </span>
+              </button>
+              <button type="button" class="button shadow button-down">
+                <span class="material-icons"> south </span>
+              </button>
+            </div>
+            <input
+              id="sections"
+              type="number"
+              max="60"
+              value="3"
+              class="shadow input-home"
+            />
+          </div>
+          <p class="text">Sessões</p>
         </div>
       </section>
       <button type="button" class="button button-home">Continuar</button>

@@ -3,6 +3,9 @@ let work = localStorage.getItem('work')
 let pause = localStorage.getItem('pause')
 let section = localStorage.getItem('sections')
 
+const bellSound = document.getElementById('bell')
+const completionSound = document.getElementById('complete')
+
 window.onload = () => {
   Section.isertDiv()
   updateNumber(work, '00')

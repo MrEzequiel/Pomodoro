@@ -37,6 +37,15 @@ const Verification = {
   }
 }
 
+const inputValue = {
+  increment(target) {
+    target.value++
+  },
+  decrement(target) {
+    target.value--
+  }
+}
+
 //SE TODOS OS INPUTS FORAM VÁLIDOS, SALVAR VALORES NO LOCAL STORAGE
 function saveInputs(work, pause, sections) {
   document.querySelector('.pomodoro').classList.remove('alert')
@@ -53,9 +62,28 @@ const redirectPage = () => (window.location.href = 'pomodoro.html')
 
 document.querySelectorAll('.input-home').forEach(input => {
   input.addEventListener('focusin', event => {
-    Verification.closeAlert(event.target.parentElement.firstElementChild)
+    Verification.closeAlert(
+      event.target.parentElement.parentElement.firstElementChild
+    )
   })
 })
+
+document.querySelectorAll('.button-up').forEach(button => {
+  button.addEventListener('click', event => {
+    inputValue.increment(
+      event.currentTarget.parentElement.parentElement.lastElementChild
+    )
+  })
+})
+
+document.querySelectorAll('.button-down').forEach(button => {
+  button.addEventListener('click', event => {
+    inputValue.decrement(
+      event.currentTarget.parentElement.parentElement.lastElementChild
+    )
+  })
+})
+
 // QUANDO O BOTÃO FOR CLICADO
 document.querySelector('.button-home').addEventListener('click', () => {
   Verification.input()

@@ -17,16 +17,40 @@ main {
   flex-wrap: wrap;
 }
 
+.pomodoro .input-group {
+  width: 14rem;
+  height: 8.5rem;
+
+  display: flex;
+}
+
 .pomodoro input {
   background: var(--third-color);
   color: var(--secondary-color);
-  width: 9rem;
-  height: 8.5rem;
+  width: 80%;
+  height: 100%;
   text-align: center;
 
   padding: 1rem;
+  margin-left: 1rem;
   font-size: 5rem;
   border-radius: 0.75rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.buttons button {
+  user-select: none;
+  padding: 0.4rem;
+}
+
+.buttons button:first-child {
+  margin-bottom: 0.5rem;
 }
 
 .pomodoro .span-alert {
@@ -54,21 +78,23 @@ main {
   height: 2rem;
 }
 
-.pomodoro div {
+.pomodoro > div {
   position: relative;
 
   margin-left: 5rem;
 }
 
-.pomodoro div p {
+.pomodoro .text {
+  text-align: right;
   margin-top: 2.5rem;
+  padding-right: 1.5rem;
 }
 
 .pomodoro div:nth-last-child(3) {
   margin: 0;
 }
 
-.button {
+.button-home {
   font-size: 2.5rem;
   font-weight: 700;
 
@@ -76,10 +102,16 @@ main {
   padding: 2rem;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  header {
+    margin-bottom: 10rem;
+  }
+
   main .pomodoro {
     display: block;
+    margin-bottom: 5rem;
   }
+
   .pomodoro.flex div {
     margin: 0 0 2rem 0;
   }
