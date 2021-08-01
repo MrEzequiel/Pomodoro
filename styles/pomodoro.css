@@ -110,6 +110,7 @@ main .work {
 
 footer {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 700px) {
